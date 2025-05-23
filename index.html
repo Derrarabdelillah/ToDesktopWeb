@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/input.css">
+    <link rel="stylesheet" href="src/output.css">
+    <!-- Ancizar Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>ToDesktop - Web app to Desktop app</title>
+</head>
+<body>
+
+    <!-- Header Start -->
+     <header class="bg-white sticky top-0 z-40">
+
+        <!-- NavBar -->
+        <nav class="flex justify-between items-center px-6 py-4">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#" class="flex items-center font-bold text-xl"><img loading="lazy" src="assets/asset 0.png"> ToDesktop</a>
+            </div>
+
+            <!-- Mobile Nav List -->
+             <div class="lg:hidden">
+                <i class="fa-solid fa-bars cursor-pointer text-xl flex hidden"></i>
+             </div>
+
+             <!-- Large Screen Nav -->
+              <div class="hidden lg:flex justify-between items-center space-x-8">
+                <a href="#Pricing" class="text-lg hover:text-main font-bold">Pricing</a>
+                <a href="#Docs" class="text-lg hover:text-main font-bold">Docs</a>
+                <a href="#Changelog" class="text-lg hover:text-main font-bold">Changelog</a>
+                <a href="#Blog" class="text-lg hover:text-main font-bold">Blog</a>
+                <a href="#Login" class="text-lg hover:text-main font-bold">Login</a>
+              </div>
+
+              <!-- Button -->
+               <div class="main-btn hidden lg:flex items-center space-x-2">
+                <a href="" class="flex justify-between items-center">
+                    <img loading="lazy" src="assets/asset 1.svg" alt="">
+                    <a href="">Electron Developer</a>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+               </div>
+        </nav>
+
+     </header>
+    <!-- Header End -->
+
+
+    <!-- Hero Section Start -->
+     <section class="hero pt-5 min-h-screen">
+
+        <div class="flex flex-col space-y-5 pt-5 px-6 md:mx-auto md:py-10 md:px-10 md:max-w-180">
+
+            <!-- button -->
+            <div class="w-30 animate-bounce hover:shadow hover:scale-y-110 scale-95 md:self-center">
+                <a href="#" class="flex items-center justify-center space-x-2 bg-yellow p-1  border border-slate-200 rounded-lg">
+                    <i class="fa-solid fa-circle text-dark-yellow circle"></i>
+                    <p class="text-text font-bold">v0.27.0</p>
+                    <i class="fa-solid fa-angle-right text-dark-yellow"></i>
+                </a>
+            </div>
+
+            <!-- Features -->
+             <div class="hidden md:flex justify-center space-x-5 text-slate-500">
+
+                <div class="flex space-x-2 items-center">
+                    <i class="fa-solid fa-file-code"></i>
+                    <p>Code optional</p>
+                </div>
+                
+                <div class="flex space-x-2 items-center">
+                    <i class="fa-solid fa-hand"></i>
+                    <p>Code optional</p>
+                </div>
+                
+                <div class="flex space-x-2 items-center">
+                    <i class="fa-solid fa-photo-film"></i>
+                    <p>Code optional</p>
+                </div>
+
+             </div>
+            <!-- Description -->
+            <h1 class="font-bold text-5xl my-5 md:self-center md:text-7xl md:text-center">Web app to desktop app in minutes</h1>
+            <p class="mx-auto text-2xl text-slate-600 my-5 text-start md:text-center">Take your web app codebase and transform it into a cross platform desktop app with native functionality.</p>
+            
+            <div class="flex flex-col space-y-2 md:flex-row md:space-x-2 md:justify-center md:items-center md:space-y-0">
+                <a href="" class="main-btn bg-main text-white text-center">Download Now</a>
+                <a href="" class="main-btn bg-white text-black text-center">Read Docs</a>
+            </div>
+        </div>
+
+     </section>
+    <!-- Hero Section End -->
+
+    <!-- Logo Wall Section Start-->
+     <section class="Wall">
+
+        <div class="flex flex-col gap-8">
+
+        <div class="flex justify-center items-center">
+            <img loading="lazy" src="assets/asset 2.svg" class="translate-y-2">
+            <h1 class="text-2xl font-meduim uppercase">apps powered by todesktop</h1>
+            <img loading="lazy" src="assets/asset 2.svg" class="-scale-x-100 translate-y-2">
+        </div>
+
+        <div id="companies-container" class="py-5 flex flex-col space-y-5 overflow-hidden px-5">
+            <!-- Line Start -->
+            <div class="line1 flex space-x-5 justify-center">
+
+              
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 3.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Unbounce</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 4.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">LifeAt</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 5.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Convy</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 6.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Morgen</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 7.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Campsite</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 8.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Rise</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 9.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">ClickUp</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 10.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Notion</span>
+                </div>
+                <!-- Card End -->
+
+                                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 11.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Sunsama</span>
+                </div>
+                <!-- Card End -->
+            </div>
+            <!-- Line End -->
+
+            <!-- Line Start -->
+            <div class="line2 flex space-x-5 justify-center">
+
+              
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 12.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Beeper</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 13.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Cal</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 14.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Webstudio</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 15.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Moises</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 16.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Basedash</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 17.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Linear</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 18.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Voiceflow</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 19.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Kitemaker</span>
+                </div>
+                <!-- Card End -->
+
+                                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 20.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Cron</span>
+                </div>
+                <!-- Card End -->
+            </div>
+            <!-- Line End -->
+
+            <!-- Line Start -->
+            <div class="line3 flex space-x-5 justify-center">
+
+              
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 21.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Unbounce1</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 22.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Beeper</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 23.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Verbu</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 24.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Perplexity</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 25.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Kosy</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 26.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Unbounce</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 27.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Slite</span>
+                </div>
+                <!-- Card End -->
+
+                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 28.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Unbounce</span>
+                </div>
+                <!-- Card End -->
+
+                                <!-- Card Start -->
+                <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white border border-gray-300 rounded-xl animate-bounce scale-95 hover:scale-100">
+                    <img loading="lazy" class="w-12 h-12 md:w-16 md:h-16" src="assets/asset 29.png">
+                    <span class="text-[14px] md:text-[16px] font-semibold">Unbounce</span>
+                </div>
+                <!-- Card End -->
+            </div>
+            <!-- Line End -->
+
+             
+
+
+        </div>
+
+        </div>
+     </section>
+    <!-- Logo Wall Section End-->
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&display=swap');
+
+
+@theme {
+  --color-main: #3238f2eb;
+  --color-yellow: #fff6cc;
+  --color-dark-yellow: #facc14;
+  --color-lightwhite: #f8f8f8;
+  --color-text: #703e12;
+}
+
+* {
+    font-family: "Ancizar Sans", sans-serif;
+    transition: all 0.3s;
+}
+
+body {  
+    background-color: #f8f8f8;
+    /* height: 10000px; */
+}
+
+.main-btn {
+    padding: 10px 20px;
+    border: 1px solid var(--color-lightwhite);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.main-btn:hover {
+    border: 1px solid #d1d1df;
+}
+
+.circle {
+    font-size: 8px;
+}
+
