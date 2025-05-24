@@ -535,9 +535,6 @@
   .overflow-hidden {
     overflow: hidden;
   }
-  .overflow-x-hidden {
-    overflow-x: hidden;
-  }
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
@@ -1119,7 +1116,7 @@
 body {
   background-color: #f8f8f8;
   scroll-behavior: smooth;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .main-btn {
   padding: 10px 20px;
