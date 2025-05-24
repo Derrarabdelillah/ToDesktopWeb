@@ -13,10 +13,19 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>ToDesktop - Web app to Desktop app</title>
 </head>
-<body>
+<body class="overflow-x-hidden transition">
+
+
+    <!-- Scroll To Top Button Start -->
+     <div class="top fixed bottom-5 ">
+        <i class="fa-solid fa-angle-up bg-main text-white py-4 px-4 rounded-full cursor-pointer scale-90 hover:scale-100"></i>
+     </div>
+    <!-- Scroll To Top Button End -->
+
+
 
     <!-- Header Start -->
-     <header class="bg-white sticky top-0 z-40">
+     <header class="bg-white sticky top-5 z-40 rounded-full border border-gray-300 max-w-7xl mx-5 md:mx-auto">
 
         <!-- NavBar -->
         <nav class="flex justify-between items-center px-6 py-4">
@@ -27,16 +36,17 @@
 
             <!-- Mobile Nav List -->
              <div class="lg:hidden">
-                <i class="fa-solid fa-bars cursor-pointer text-xl flex hidden"></i>
+                <i class="fa-solid fa-bars cursor-pointer text-xl" onclick="handleMenu()"></i>
              </div>
+
 
              <!-- Large Screen Nav -->
               <div class="hidden lg:flex justify-between items-center space-x-8">
-                <a href="#Pricing" class="text-lg hover:text-main font-bold">Pricing</a>
-                <a href="#Docs" class="text-lg hover:text-main font-bold">Docs</a>
+                <a href="#steps" class="text-lg hover:text-main font-bold">Docs</a>
                 <a href="#Changelog" class="text-lg hover:text-main font-bold">Changelog</a>
-                <a href="#Blog" class="text-lg hover:text-main font-bold">Blog</a>
-                <a href="#Login" class="text-lg hover:text-main font-bold">Login</a>
+                <a href="#Pricing" class="text-lg hover:text-main font-bold">Pricing</a>
+                <a href="#faq" class="text-lg hover:text-main font-bold">FAQ</a>
+                <a href="#contact" class="text-lg hover:text-main font-bold">Contact</a>
               </div>
 
               <!-- Button -->
@@ -47,19 +57,62 @@
                     <i class="fa-solid fa-angle-right"></i>
                 </a>
                </div>
+
+    <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-white inset-0 p-3">
+            <div id="nav-bar" class="flex justify-between">
+
+            <div class="logo">
+                <a href="#" class="flex items-center font-bold text-xl"><img loading="lazy" src="assets/asset 0.png"> ToDesktop</a>
+            </div>
+
+                <button class="p-2 md:hidden" onclick="handleMenu()">
+                    <i class="fa-solid fa-xmark text-gray-600 text-xl cursor-pointer"></i>
+                </button>
+
+            </div>
+
+            <div class="mt-6">
+                <a href="#steps" class="font-bold m-3 p-3 hover:bg-gray-50 block rounded-lg">Docs</a>
+                <a href="#Changelog" class="font-bold m-3 p-3 hover:bg-gray-50 block rounded-lg">Changelog</a>
+                <a href="#Pricing" class="font-bold m-3 p-3 hover:bg-gray-50 block rounded-lg">Pricing</a>
+                <a href="#faq" class="font-bold m-3 p-3 hover:bg-gray-50 block rounded-lg">FAQ</a>
+                <a href="#contact" class="font-bold m-3 p-3 hover:bg-gray-50 block rounded-lg">Contact</a>
+            </div>
+            
+            <div class="h-[1px] bg-gray-300"></div>
+
+            <!-- <button class="mt-6 w-full flex gap-2 items-center  px-6 py-4 rounded-lg hover:bg-gray-50"> -->
+               <div class="main-btn flex items-center space-x-2 mt-5">
+                <a href="" class="flex justify-between items-center">
+                    <img loading="lazy" src="assets/asset 1.svg" alt="">
+                    <a href="">Electron Developer</a>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+               </div>
+
+        </div> 
         </nav>
 
      </header>
     <!-- Header End -->
 
-
     <!-- Hero Section Start -->
      <section class="hero pt-5 min-h-screen">
+
+            <dotlottie-player
+            class="absolute -left-120 top-0 bottom-0 m-auto -z-50 md:left-0 md:mx-auto"                                                                                                                                                                           
+            src="https://lottie.host/14da2830-9491-47cf-a437-dda1c58a4abb/DJxtzGHPhR.lottie"
+            background="transparent"
+            speed="1"
+            style="width: 1500px; height: 1500px"
+            loop
+            autoplay
+            ></dotlottie-player>
 
         <div class="flex flex-col space-y-5 pt-5 px-6 md:mx-auto md:py-10 md:px-10 md:max-w-180">
 
             <!-- button -->
-            <div class="w-30 hover:shadow hover:scale-y-110 scale-95 md:self-center">
+            <div class="w-30 hover:shadow hover:scale-y-110 scale-95 md:self-center animate-bounce">
                 <a href="#" class="flex items-center justify-center space-x-2 bg-yellow p-1  border border-slate-200 rounded-lg">
                     <i class="fa-solid fa-circle text-dark-yellow circle"></i>
                     <p class="text-text font-bold">v0.27.0</p>
@@ -92,7 +145,7 @@
             
             <div class="flex flex-col space-y-2 md:flex-row md:space-x-2 md:justify-center md:items-center md:space-y-0">
                 <a href="" class="main-btn bg-main text-white text-center">Download Now</a>
-                <a href="" class="main-btn bg-white text-black text-center">Read Docs</a>
+                <a href="https://www.todesktop.com/docs/introduction/getting-started" class="main-btn bg-white text-black text-center">Read Docs</a>
             </div>
         </div>
 
@@ -330,11 +383,13 @@
     <!-- Step By Step Start -->
      <section id="steps" class="px-6 pb-8 max-w-7xl mt-16 mx-auto md:px-8 md:mt-32">
 
-            <h1 class="font-bold text-5xl my-5 sm:font-semibold">How It Works</h1>
+            <div class="flex flex-row gap-3 items-center">
+                <h1 class="font-bold text-5xl my-5 sm:font-semibold">How It Works</h1>
+            </div>
             
             <div class="flex flex-col space-y-8">
 
-            <!-- Step Start -->
+            <!-- Step 1 Start -->
             <div class="rounded-xl border border-gray-300 flex flex-col space-x-0 space-y-10 px-8 py-12 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50 md:flex-row md:space-y-0 md:space-x-10 md:px-12 md:py-16">
                 
                 <div class="flex flex-col gap-6 md:w-1/2">
@@ -410,7 +465,7 @@
             </div>
             <!-- Step End -->
 
-            <!-- Step Start -->
+            <!-- Step 2 Start -->
             <div class="rounded-xl border border-gray-300 flex flex-col space-x-0 space-y-10 px-8 py-12 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50 md:flex-row md:space-y-0 md:space-x-10 md:px-12 md:py-16">
                 
                 <div class="flex flex-col gap-6 md:w-1/2">
@@ -479,20 +534,27 @@
 
                 </div>
 
-                <div class="img px-x md:px-5">
-                    <img src="assets/asset 66.svg" alt="">
+                <div class="img md:px-5 flex justify-center items-center md:w-1/2">
+                    <dotlottie-player
+  src="https://lottie.host/6ba0c1e1-95e6-4f98-8be4-d1cf0240f674/ybWf5iJmW2.lottie"
+  background="transparent"
+  speed="1"
+  style="width: 500px; height: 500px"
+  loop
+  autoplay
+></dotlottie-player>
                 </div>
 
             </div>
             <!-- Step End -->
 
-            <!-- Step Start -->
+            <!-- Step 3 Start -->
             <div class="rounded-xl border border-gray-300 flex flex-col space-x-0 space-y-10 px-8 py-12 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50 md:flex-row md:space-y-0 md:space-x-10 md:px-12 md:py-16">
                 
                 <div class="flex flex-col gap-6 md:w-1/2">
-                    <span class="border border-yellow-300 bg-yellow text-text w-fit px-3 py-1 rounded-lg font-bold">Step 2</span>
-                    <h1 class="font-bold text-3xl mt-5 sm:font-semibold md:font-bold md:text-5xl ">Add desktop code to customise your web app</h1>
-                    <p class="text-slate-500">No need to create a new repository, just add code from our desktop APIs to your codebase and get access to system level functionality.</p>
+                    <span class="border border-yellow-300 bg-yellow text-text w-fit px-3 py-1 rounded-lg font-bold">Step 3</span>
+                    <h1 class="font-bold text-3xl mt-5 sm:font-semibold md:font-bold md:text-5xl ">Publish </h1>
+                    <p class="text-slate-500">One-click will publish your desktop app to your customers and give you a download link to put on your website.</p>
                 
                     <!-- Lists Start -->
                     <div class="flex flex-row space-x-2">
@@ -502,21 +564,21 @@
                             <!-- List Item Start -->
                             <div class="flex flex-row space-x-2">
                                 <img src="assets/asset 56.svg">
-                                <a href="#">Native notifications</a>
+                                <a href="#">Super-fast global CDN</a>
                             </div>
                             <!-- List Item End -->
 
                             <!-- List Item Start -->
                             <div class="flex flex-row space-x-2">
                                 <img src="assets/asset 56.svg">
-                                <a href="#">Application menu</a>
+                                <a href="https://www.todesktop.com/docs/application/download-links-from-your-website">Magic universal links</a>
                             </div>
                             <!-- List Item End -->
 
                             <!-- List Item Start -->
                             <div class="flex flex-row space-x-2">
                                 <img src="assets/asset 56.svg" alt="">
-                                <a href="#">Dock/Icon</a>
+                                <a href="#">Manage version numbers</a>
                             </div>
                             <!-- List Item End -->
 
@@ -529,21 +591,21 @@
                             <!-- List Item Start -->
                             <div class="flex flex-row space-x-2">
                                 <img src="assets/asset 56.svg">
-                                <a href="#">Context menu</a>
+                                <a href="#">Download analytics</a>
                             </div>
                             <!-- List Item End -->
 
                             <!-- List Item Start -->
                             <div class="flex flex-row space-x-2">
                                 <img src="assets/asset 56.svg">
-                                <a href="#">Global keyboard shortcuts</a>
+                                <a href="#">Native installers for all platforms</a>
                             </div>
                             <!-- List Item End -->
 
                             <!-- List Item Start -->
                             <div class="flex flex-row space-x-2">
                                 <img src="assets/asset 56.svg">
-                                <a href="#">Isolated browser views</a>
+                                <a href="#">Download links on your domain</a>
                             </div>
                             <!-- List Item End -->
 
@@ -555,8 +617,15 @@
 
                 </div>
 
-                <div class="img px-x md:px-5">
-                    <img src="assets/asset 66.svg" alt="">
+                <div class="img md:px-5 flex justify-center items-center md:w-1/2">
+                    <dotlottie-player
+  src="https://lottie.host/0c6bb18a-f201-4378-96e8-2ec3e35ffb95/Yq7GBcMvET.lottie"
+  background="transparent"
+  speed="1"
+  style="width: 500px; height: 500px"
+  loop
+  autoplay
+></dotlottie-player>
                 </div>
 
             </div>
@@ -568,14 +637,14 @@
      <!-- Step By Step End -->
 
      <!-- Grids Section Start -->
-     <section id="steps" class="flex flex-col  px-6 pb-12 max-w-7xl mt-16 mx-auto md:px-8 md:mt-32 md:space-y-5 md:mx-auto">
+     <section id="Changelog" class="flex flex-col px-6 pb-12 max-w-7xl mt-16 mx-auto md:px-8 md:mt-32 md:space-y-5">
 
-        <h1 class="font-bold text-5xl my-5 sm:font-semibold">ToDesktop handles the details</h1>
+        <h1 class="font-bold text-5xl my-5 sm:font-semibold md:text-start">ToDesktop handles the details</h1>
 
         <div class="container flex flex-col space-y-8 mb-4 md:flex-row md:space-y-0 md:space-x-8 ">
 
             <!-- Card Start -->
-            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-1 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-auto scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
                 <h1 class="text-2xl font-bold">Native notifications</h1>
                 <p class="text-slate-500 text-center">We’ll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.</p>
                 <img src="assets/asset 37.png" alt="">
@@ -583,7 +652,7 @@
             <!-- Card End -->
 
             <!-- Card Start -->
-            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-1 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-auto scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
                 <h1 class="text-2xl font-bold">Auto Updates</h1>
                 <p class="text-slate-500 text-center">We’ll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.</p>
                 <img src="assets/asset 38.png" alt="">
@@ -591,7 +660,7 @@
             <!-- Card End -->
 
             <!-- Card Start -->
-            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-1 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-auto scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
                 <h1 class="text-2xl font-bold">Plugins</h1>
                 <p class="text-slate-500 text-center">We’ll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.</p>
                 <img src="assets/asset 39.png" alt="">
@@ -603,7 +672,7 @@
         <div class="container flex flex-col space-y-8 mb-4 md:flex-row md:space-y-0 md:space-x-8">
 
             <!-- Card Start -->
-            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-1 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-auto scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
                 <h1 class="text-2xl font-bold">Access to Native APIs</h1>
                 <p class="text-slate-500 text-center">ToDesktop ensures the underlying browser, performance improvements, security patches and additional features are always up to date.</p>
                 <img src="assets/asset 40.png" alt="">
@@ -611,14 +680,14 @@
             <!-- Card End -->
             
             <!-- Card Start -->
-            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-1 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-auto scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
                 <h1 class="text-2xl font-bold text-center">Customizable look and feel</h1>
                 <img src="assets/asset 41.png" alt="">
             </div>
             <!-- Card End -->
             
             <!-- Card Start -->
-            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-1 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+            <div class="flex flex-col space-y-8 justify-center items-center border border-gray-300 rounded-lg p-6 md:flex-auto scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
                 <h1 class="text-2xl font-bold">Native Installers</h1>
                 <p class="text-slate-500 text-center">We even provide a magic link which will detect your users operating system & download the most up to date version of your app.</p>
                 <img src="assets/asset 42.png" alt="">
@@ -628,9 +697,456 @@
         </div>
      </section>
       <!-- Grids Section End -->
-     <div class="h-[1000px]"></div
-        >
+
+      <!-- Customer Storeis Start -->
+        <section id="steps" class="flex flex-col px-6 pb-12 max-w-7xl mt-16 mx-auto md:px-8 md:mt-32 md:space-y-5">
+
+        <h1 class="font-bold text-5xl my-5 sm:font-semibold md:text-start">Customer stories</h1>
+
+            <div class="container flex flex-col space-y-8 mb-4 md:flex-row md:space-y-0 md:space-x-4 ">
+
+            <!-- Card Start -->
+            <div class="flex flex-col space-y-8 items-start justify-between border border-gray-300 rounded-lg p-6 md:flex-1/3 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+                <span class="w-12 h-12 bg-lightblue flex justify-center items-center rounded-full"><i class="fa-solid fa-code"></i></span>
+                <h1 class="text-2xl font-bold">Native notifications</h1>
+                <p class="text-slate-500 text-start">What sets ToDesktop apart is its seamless integration with native APIs using our existing web codebase. By tapping into APIs like Tray and Notifications, we've crafted an exceptionally polished desktop user experience.</p>
+                
+                <div class="flex flex-row">
+
+                    <div class="flex">
+                        <img src="assets/asset 47.png" class="w-12 h-12 rounded-full border border-gray-500">
+                        <img src="assets/asset 48.jpeg" class="w-12 h-12 rounded-full -translate-x-2 border-gray-500">
+                    </div>
+
+                    <div class="flex flex-col items-start justify-center">
+                        <h2 class="font-bold text-xl">Rick Pastoor</h2>
+                        <a href="#" class="text-slate-500">Rise</a>
+                    </div>
+
+                </div>
+
+            </div>  
+            <!-- Card End -->
+
+            <!-- Card Start -->
+            <div class="flex flex-col space-y-8 items-start justify-between border border-gray-300 rounded-lg p-6 md:flex-1/3 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+                <span class="w-12 h-12 bg-lightrose flex justify-center items-center rounded-full"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                <h1 class="text-2xl font-bold">Cleaner, less cluttered UI</h1>
+                <p class="text-slate-500 text-start">Having a desktop app gives us the freedom to design the experience we want, including better keyboard shortcuts and a cleaner UI. It was a no-brainer for us to use ToDesktop.</p>
+                
+                <div class="flex flex-row">
+
+                    <div class="flex">
+                        <img src="assets/asset 49.png" class="w-12 h-12 rounded-full border border-gray-500">
+                        <img src="assets/asset 50.jpeg" class="w-12 h-12 rounded-full -translate-x-2 border-gray-500">
+                    </div>
+
+                    <div class="flex flex-col items-start justify-center">
+                        <h2 class="font-bold text-xl">Max Musing</h2>
+                        <a href="#" class="text-slate-500">Basedash</a>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Card End -->
+
+            <!-- Card Start -->
+            <div class="flex flex-col space-y-8 items-start justify-between border border-gray-300 rounded-lg p-6 md:flex-1/3 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+                <span class="w-12 h-12 bg-yellow flex justify-center items-center rounded-full"><i class="fa-solid fa-infinity"></i></span>
+                <h1 class="text-2xl font-bold">Code optional</h1>
+                <p class="text-slate-500 text-start">It was unbelievably simple for us to get a desktop app up and running, and we didn’t have to write a single line of code. Once we had this MVP, we were able to extend the app’s functionality with custom behavior using ToDesktop’s libraries.</p>
+                
+                <div class="flex flex-row">
+
+                    <div class="flex">
+                        <img src="assets/asset 51.png" class="w-12 h-12 rounded-full border border-gray-500">
+                        <img src="assets/asset 52.jpeg" class="w-12 h-12 rounded-full -translate-x-2 border-gray-500">
+                    </div>
+
+                    <div class="flex flex-col items-start justify-center">
+                        <h2 class="font-bold text-xl">Pouya Rad</h2>
+                        <a href="#" class="text-slate-500">LifeAt</a>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Card End -->
+
+        </div>
+     </section>
+       <!-- Customer Stories End -->
+
+       <!-- Download Section Start -->
+    <section id="steps" class="px-6 max-w-7xl mt-16 mx-auto md:px-8 md:mt-32">
+
+            
+            <div class="flex flex-col space-y-8">
+
+            <!-- Step Start -->
+            <div style="background-image: url(assets/asset\ 55.png);" class="bg-zinc-900 text-white rounded-xl border border-gray-300 flex flex-col space-x-0 space-y-10 px-8 py-8 md:flex-row md:space-y-0 md:space-x-10 md:px-12 md:py-16">
+                
+                <div class="flex flex-col gap-6 md:w-1/2">
+                    <h1 class="font-bold text-xl text-slate-300 uppercase">ready to start building?</h1>
+                    <h1 class="font-bold text-3xl mt-5 sm:font-semibold md:font-bold md:text-5xl ">Create your desktop app for free</h1>
+                    <p class="text-slate-300 text-xl">ToDesktop Builder will take you step-by-step through the process of creating your first desktop app in just a few minutes.</p>
+                
+                    <a href="#" class="hidden py-3 px-6 rounded-lg w-fit md:flex flex-row items-center gap-2 bg-main text-xl font-bold scale-95 hover:scale-100"><i class="fa-solid fa-download"></i> Download ToDesktop Builder</a>
+
+
+                </div>
+
+                <div class="img px-x overflow-hidden md:px-5 md:w-1/2">
+                    <img src="assets/asset 53.png" class="w-full">
+                </div>
+
+            </div>
+            <!-- Step End -->
+            </div>
+
+     </section>
+        <!-- Downloads Section End  -->
+
+        <!-- Plan Start -->
+    <section id="Pricing" class="px-6 max-w-7xl mt-16 mx-auto md:px-8 md:mt-32">
+
+            <h1 class="font-bold text-5xl my-5 sm:font-semibold">Choose a plan that fits your needs</h1>
+            
+            <div class="container flex flex-col space-y-8 mb-4 md:flex-row md:space-y-0 md:space-x-4 ">
+
+            <!-- Card Start -->
+            <div class="flex flex-col space-y-4 items-start justify-between border border-gray-300 rounded-lg p-6 md:flex-1/3 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+                <h1 class="text-2xl font-bold">Free</h1>
+                <p class="text-slate-500 text-start">For personal use or testing your app before deploying to customers.</p>
+
+                <h2 class="text-slate-500 font-bold">key features</h2>
+
+                <div class="flex flex-col space-y-3 py-6">
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <img src="assets/asset 56.svg">
+                                <a href="#" class="text-xl text-gray-500">Free for Personal Use</a>
+                            </div>
+                            <!-- List Item End -->
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <img src="assets/asset 56.svg">
+                                <a href="#" class="text-xl text-gray-500">Run App Locally</a>
+                            </div>
+                            <!-- List Item End -->
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <i class="fa-solid fa-x text-slate-500 text-sm"></i>
+                                <a href="#" class="text-xl text-gray-500">No Public Distribution</a>
+                            </div>
+                            <!-- List Item End -->
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <i class="fa-solid fa-x text-slate-500 text-sm"></i>
+                                <a href="#" class="text-xl text-gray-500">No Native Installers</a>
+                            </div>
+                            <!-- List Item End -->
+                </div>
+
+                <a href="#" class="main-btn font-bold bg-white text-main text-center self-center w-full"> Get Started</a>
+
+            </div>  
+            <!-- Card End -->
+
+            <!-- Card Start -->
+            <div class="flex flex-col space-y-4 items-start justify-between border border-gray-300 rounded-lg p-6 md:flex-1/3 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+                <h1 class="text-2xl font-bold">Essential</h1>
+                <p class="text-slate-500 text-start">For simple desktop apps.</p>
+
+                <h2 class="text-slate-500 font-bold">key features</h2>
+
+                <span class="flex flex-row gap-2 font-bold text-2xl items-center">$125 <span class="font-meduim text-sm">/month</span></span>
+
+                <div class="flex flex-col space-y-3 py-6">
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <img src="assets/asset 56.svg">
+                                <a href="#" class="text-xl text-gray-500">Windows, Mac & Linux</a>
+                            </div>
+                            <!-- List Item End -->
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <img src="assets/asset 56.svg">
+                                <a href="#" class="text-xl text-gray-500">Automatic Updates</a>
+                            </div>
+                            <!-- List Item End -->
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <img src="assets/asset 56.svg">
+                                <a href="#" class="text-xl text-gray-500">Native Installers</a>
+                            </div>
+                            <!-- List Item End -->
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <img src="assets/asset 56.svg">
+                                <a href="#" class="text-xl text-gray-500">Email/chat support</a>
+                            </div>
+                            <!-- List Item End -->
+                </div>
+
+                <a href="#" class="main-btn font-bold bg-white text-main text-center self-center w-full"> Get Started</a>
+
+            </div>  
+            <!-- Card End -->
+             
+            <!-- Card Start -->
+            <div class="flex flex-col space-y-4 items-start justify-between border border-gray-300 rounded-lg p-6 md:flex-1/3 scale-95 hover:scale-100 bg-slate-100 hover:bg-gradient-to-br hover:from-red-50 hover:via-purple-50 hover:to-yellow-50">
+                <h1 class="text-2xl font-bold">Professional</h1>
+                <p class="text-slate-500 text-start">For sophisticated desktop apps.</p>
+
+                <h2 class="text-slate-500 font-bold">Everything in Essential Plus</h2>
+
+                <span class="flex flex-row gap-2 font-bold text-2xl items-center">$300 <span class="font-meduim text-sm">/month</span></span>
+
+                <div class="flex flex-col space-y-3 py-6">
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <img src="assets/asset 56.svg">
+                                <a href="#" class="text-xl text-gray-500">Branded Download Links</a>
+                            </div>
+                            <!-- List Item End -->
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <img src="assets/asset 56.svg">
+                                <a href="#" class="text-xl text-gray-500">Analytics</a>
+                            </div>
+                            <!-- List Item End -->
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <img src="assets/asset 56.svg">
+                                <a href="#" class="text-xl text-gray-500">Access to Plugins</a>
+                            </div>
+                            <!-- List Item End -->
+
+                            <!-- List Item Start -->
+                            <div class="flex flex-row space-x-2 items-center">
+                                <img src="assets/asset 56.svg">
+                                <a href="#" class="text-xl text-gray-500">Access to Restricted API</a>
+                            </div>
+                            <!-- List Item End -->
+                </div>
+
+                <a href="#" class="main-btn font-bold bg-main text-white text-center self-center w-full"> Get Started</a>
+
+            </div>  
+            <!-- Card End -->
+
+        </div>
+
+     </section>
+         <!-- Plan End -->
+
+         <!-- FAQ Section Start -->
+    <section id="faq" class="px-6 max-w-7xl mt-16 mx-auto md:px-8 md:mt-32">
+
+            <h1 class="font-bold text-5xl my-5 sm:font-semibold">FAQs</h1>
+            
+            <div class="container flex flex-col space-y-8 mb-4 md:flex-row md:space-y-0 md:space-x-4 ">
+
+            <!-- Card Start -->
+             <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 flex-1">
+
+             <dt class="cursor-pointer flex justify-between items-center" aria-controls="faq-1">
+                <p class="font-semibold text-lg">Is ToDesktop For Me?</p>
+                <i class="fa-solid fa-angle-up -rotate-180"></i>
+             </dt>
+
+             <dd id="faq-1" class="hidden text-lg font-light mt-6">
+                <p>That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+             </dd>
+
+             </div>
+            <!-- Card End -->
+
+            <!-- Card Start -->
+             <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 flex-1">
+
+             <dt class="cursor-pointer flex justify-between items-center" aria-controls="faq-2">
+                <p class="font-semibold text-lg">Can I try ToDesktop without buying?</p>
+                <i class="fa-solid fa-angle-up -rotate-180"></i>
+             </dt>
+
+             <dd id="faq-2" class="hidden text-lg font-light mt-6">
+                <p>Yes. You can get started by downloading ToDesktop Builder at no cost. After installing it, you can build your desktop application and preview it by clicking the “Run” button. This allows you to test the app on your own computer to ensure it performs to your expectations.</p>
+             </dd>
+
+             </div>
+            <!-- Card End -->
+             
+        </div>
+
+
+            <div class="container flex flex-col space-y-8 mb-4 md:flex-row md:space-y-0 md:space-x-4 ">
+
+            <!-- Card Start -->
+             <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 flex-1">
+
+             <dt class="cursor-pointer flex justify-between items-center" aria-controls="faq-3">
+                <p class="font-semibold text-lg">Do you collect or store data about my customers?</p>
+                <i class="fa-solid fa-angle-up -rotate-180"></i>
+             </dt>
+
+             <dd id="faq-3" class="hidden text-lg font-light mt-6">
+                <p>No. When a ToDesktop app opens it contacts the our servers to check if an update is available. We do not collect or store any user data from these requests.</p>
+             </dd>
+
+             </div>
+            <!-- Card End -->
+
+            <!-- Card Start -->
+             <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 flex-1">
+
+             <dt class="cursor-pointer flex justify-between items-center" aria-controls="faq-4">
+                <p class="font-semibold text-lg">Is ToDesktop For Me?</p>
+                <i class="fa-solid fa-angle-up -rotate-180"></i>
+             </dt>
+
+             <dd id="faq-4" class="hidden text-lg font-light mt-6">
+                <p>That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+             </dd>
+
+             </div>
+            <!-- Card End -->
+             
+        </div>
+
+            <div class="container flex flex-col space-y-8 mb-4 md:flex-row md:space-y-0 md:space-x-4 ">
+
+            <!-- Card Start -->
+             <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 flex-1">
+
+             <dt class="cursor-pointer flex justify-between items-center" aria-controls="faq-5">
+                <p class="font-semibold text-lg">How does ToDesktop work under the hood?</p>
+                <i class="fa-solid fa-angle-up -rotate-180"></i>
+             </dt>
+
+             <dd id="faq-5" class="hidden text-lg font-light mt-6">
+                <p>It can help to think of ToDesktop as a custom web browser dedicated to your web app or website. It shows a live version of your site or web app at all times, just like a web browser. There is no toolbar or address bar or refresh buttons but it behaves and functions just like a web browser. This means you don’t need to do anything to your existing site, it will just work. If your site works in Google Chrome then it is compatible with ToDesktop.</p>
+             </dd>
+
+             </div>
+            <!-- Card End -->
+
+            <!-- Card Start -->
+             <div class="rounded-xl border border-gray-200 bg-gray-50 p-6 flex-1">
+
+             <dt class="cursor-pointer flex justify-between items-center" aria-controls="faq-6">
+                <p class="font-semibold text-lg">What support do you offer?</p>
+                <i class="fa-solid fa-angle-up -rotate-180"></i>
+             </dt>
+
+             <dd id="faq-6" class="hidden text-lg font-light mt-6">
+                <p>We’ll do our best to help you with any issue you encounter with ToDesktop. You can get in touch with us via email and chat.</p>
+             </dd>
+
+             </div>
+            <!-- Card End -->
+             
+        </div>
+
+     </section>
+     <!-- FAQ Section End -->
+
+     <!-- Contact Form Start -->
+          <section id="contact" class="px-6 max-w-7xl mt-16 mx-auto md:px-8 md:mt-32">
+
+            <div class="flex flex-row gap-6 items-center">
+                <h1 class="font-bold text-5xl my-5 sm:font-semibold">Contact Us</h1>
+                <dotlottie-player
+                src="https://lottie.host/761ea098-dc4e-468f-b368-4dc105550639/7lMQo1RjJ0.lottie"
+                background="transparent"
+                speed="1"
+                style="width: 60px; height: 60px"
+                loop
+                autoplay
+                ></dotlottie-player>
+            </div>
+
+            <div class="container flex flex-col space-y-8 mb-4 px-4 py-4 md:flex-row md:space-y-0 md:space-x-6 bg-gray-50 border border-gray-300 rounded-lg">
+               
+                <form action="" class="flex flex-col gap-4 md:w-1/2">
+
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-xl">Name</h1>
+                        <input type="text" required placeholder="Your Name" class="border border-gray-300 px-4 py-2 outline-0 rounded-lg">
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-xl">Email</h1>
+                        <input type="email" required placeholder="Your Email" class="border border-gray-300 px-4 py-2 outline-0 rounded-lg">
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-xl">Phone</h1>
+                        <input type="number" required inputmode="numeric" pattern="[0-9]" placeholder="Your Number" class="border border-gray-300 px-4 py-2 outline-0 rounded-lg">
+                    </div>
+
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-xl">Message</h1>
+                        <textarea name="comment" required form="usrform" placeholder="Enter Your Message Here" class="border border-gray-300 px-4 py-2 outline-0 rounded-lg h-50 max-h-100 min-h-10"></textarea>
+                    </div>
+
+                    <button type="submit" class="main-btn bg-main text-white text-center cursor-pointer">Send</button>
+                </form>
+
+                <div class="md:w-1/2 flex items-center justify-center">
+                    <dotlottie-player
+                        src="https://lottie.host/8cfb7e52-5bb9-43d3-8a18-433218324931/D7qOZZwmUS.lottie"
+                        background="transparent"
+                        speed="1"
+                        style="width: 700px; height: 700px"
+                        loop
+                        autoplay
+                    ></dotlottie-player>
+                </div>
+
+            </div>
+     </section>
+     <!-- Contact Form End -->
+
+     <!-- Footer Start -->
+      <section id="footer" class="px-6 max-w-7xl mt-16 mx-auto md:px-8 md:mt-32">
+        
+        <div class="bg-white border border-gray-300 rounded-lg px-6 py-6 container flex flex-col items-center justify-between space-y-8 mb-4 md:rounded-full md:flex-row-reverse md:space-y-0 md:space-x-4 ">
+            
+            
+            <div class="flex flex-row gap-8">
+                <a href="#" class="text-gray-500 font-bold hover:text-main">Documentation</a>
+                <i class="fa-brands fa-twitter text-gray-500 cursor-pointer text-xl scale-100 hover:scale-110 hover:text-main"></i>
+                <i class="fa-brands fa-github text-gray-500 cursor-pointer text-xl scale-100 hover:scale-110 hover:text-main"></i>
+            </div>
+
+            <div class="logo">
+                <a href="#" class="flex items-center font-bold text-xl"><img loading="lazy" src="assets/asset 0.png"> ToDesktop</a>
+            </div>
+            
+        </div>
+
+      </section>
+     <!-- Footer End -->
+
 
     <script src="script.js"></script>
+    <script
+    src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+    type="module"
+    ></script>
 </body>
 </html>
