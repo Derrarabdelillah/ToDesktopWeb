@@ -1,3 +1,4 @@
+// FAQ Sections Drawer
 const dtElements = document.querySelectorAll("dt");
 
 dtElements.forEach(ele => {
@@ -18,8 +19,10 @@ function handleMenu() {
 }
 
 
+// Scroll To Top Button
 let topBtn = document.querySelector(".top");
 
+// Show The Button when the height is >= 700px and remove it if not!
 window.onscroll = function() {
     if( scrollY >= 700 ) {
         topBtn.classList.add("active");
@@ -28,6 +31,7 @@ window.onscroll = function() {
     }
 }
 
+// OnClick on the Button the page will scroll smothly on the top
 topBtn.onclick = function() {
     window.scrollTo({
         top: 0,
